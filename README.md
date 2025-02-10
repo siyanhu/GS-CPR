@@ -19,6 +19,7 @@ and [Tristan BRAUD](https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=en
 - [ ] Finish environment setting
 - [ ] Upload all pre-trained models
 - [ ] Upload all scripts
+will try to finish by March!
 
 ## Installation
 ### ACT Scaffold-GS environment
