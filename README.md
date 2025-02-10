@@ -77,3 +77,7 @@ ACT_Scaffold_GS
 │   ├── 12scenes
 ```
 And then run the below command to render the synthetic images based on the `coarse_poses`.
+
+
+## Acknowledgements
+This project is developed based on several fantastic repos: [Scaffold-GS](https://github.com/city-super/Scaffold-GS), [MASt3R](https://github.com/naver/mast3r), [NeFeS](https://github.com/ActiveVisionLab/NeFeS) and [ACE](https://github.com/nianticlabs/ace). We thank the original authors for their excellent work.
