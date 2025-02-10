@@ -22,7 +22,7 @@ We tested our code based on CUDA 12.1, PyTorch 2.4.1, and Python 3.11+
 ### GS-CPR refinement environment
 Create the environment as same as [MASt3R](https://github.com/naver/mast3r#demo)
 
-## Datasets
+## Datasets (raw images + poses)
 This paper uses three public datasets:
 - [Microsoft 7-Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)
 - [Cambridge Landmarks](https://www.repository.cam.ac.uk/handle/1810/251342/)
@@ -58,3 +58,22 @@ cd datasets
 # Downloads the data to datasets/Cambridge_{GreatCourt, KingsCollege, ...}
 ./setup_cambridge.py
 ```
+
+## Datasets (pretrained 3DGS models and ACT weights)
+You can download the prepared DFNet/ACE/Marepo/GLACE prediction poses [link]() and unzip them in the folder `GS-CPR/coarse_poses/`.
+```
+coarse_poses
+├── ace
+├── dfnet
+├── glace
+├── marepo
+```
+You can download the pretrained 3DGS models [link]() and unzip them in the folder `GS-CPR/ACT_Scaffold_GS/data/`. 
+```
+ACT_Scaffold_GS
+├── data
+│   ├── cambridge
+│   ├── 7scenes
+│   ├── 12scenes
+```
+And then run the below command to render the synthetic images based on the `coarse_poses`.
