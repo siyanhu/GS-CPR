@@ -87,4 +87,4 @@ And then run the below command to render the synthetic images based on the `coar
 
 
 ## Acknowledgements
-This project is developed based on several fantastic repos: [Scaffold-GS](https://github.com/city-super/Scaffold-GS), [MASt3R](https://github.com/naver/mast3r), [NeFeS](https://github.com/ActiveVisionLab/NeFeS) and [ACE](https://github.com/nianticlabs/ace). We thank the original authors for their excellent work.
+This project is developed based on several fantastic repos: [Scaffold-GS](https://github.com/city-super/Scaffold-GS), [MASt3R](https://github.com/naver/mast3r), [NeFeS](https://github.com/ActiveVisionLab/NeFeS), [ACE](https://github.com/nianticlabs/ace) and [Depth for 3DGS](https://github.com/leo-frank/diff-gaussian-rasterization-depth). We thank the original authors for their excellent work.
