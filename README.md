@@ -15,4 +15,6 @@ and [Tristan BRAUD](https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=en
 [![GS-CPR](imgs/Method.jpg)](https://arxiv.org/abs/2408.11085)
 [![GS-CPR_rel](imgs/Method_rel.jpg)](https://arxiv.org/abs/2408.11085)
 
-
+## Installation
+# ACT Scaffold-GS environment
+We tested our code based on CUDA 12.1, PyTorch 2.4.1, and Python 3.11+
