@@ -10,7 +10,7 @@ and [Tristan BRAUD](https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=en
 
 **[Project Page](https://xrim-lab.github.io/GS-CPR/) | [Paper](https://openreview.net/forum?id=mP7uV59iJM)**
 
-[![GS-CPR](imgs/Method.jpg)](https://arxiv.org/abs/2303.10087)
-[![GS-CPR_rel](imgs/Method_rel.jpg)](https://arxiv.org/abs/2303.10087)
+[![GS-CPR](imgs/Method.jpg)](https://arxiv.org/abs/2408.11085)
+[![GS-CPR_rel](imgs/Method_rel.jpg)](https://arxiv.org/abs/2408.11085)
 
 
