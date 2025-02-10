@@ -16,5 +16,8 @@ and [Tristan BRAUD](https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=en
 [![GS-CPR_rel](imgs/Method_rel.jpg)](https://arxiv.org/abs/2408.11085)
 
 ## Installation
-# ACT Scaffold-GS environment
+### ACT Scaffold-GS environment
 We tested our code based on CUDA 12.1, PyTorch 2.4.1, and Python 3.11+
+
+### GS-CPR refinement environment
+Create the environment as same as [MASt3R](https://github.com/naver/mast3r#demo)
