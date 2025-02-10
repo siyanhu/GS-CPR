@@ -27,15 +27,15 @@ This paper uses three public datasets:
 - [Microsoft 7-Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)
 - [Cambridge Landmarks](https://www.repository.cam.ac.uk/handle/1810/251342/)
 - [Stanford 12-Scenes](https://graphics.stanford.edu/projects/reloc/)
-Following [ACE](https://github.com/nianticlabs/ace), we use scripts in the `datasets` folder to automatically download and extract the data in a format that can be readily used by the ACE scripts. The format is the same used by the DSAC* codebase, see [here](https://github.com/vislearn/dsacstar#data-structure) for
-details.
+
+Following [ACE](https://github.com/nianticlabs/ace), we utilize the same scripts in the `datasets` folder to automatically download and extract the data in a consistent format.
 
 > **Important: make sure you have checked the license terms of each dataset before using it.**
 
 ### {7, 12}-Scenes:
 
 You can use the `datasets/setup_{7,12}scenes.py` scripts to download the data.
-As mentioned in the paper, we experimented _Pseudo Ground Truth (PGT)_ camera poses obtained after running SfM on the scenes (see the [ICCV 2021 paper](https://openaccess.thecvf.com/content/ICCV2021/html/Brachmann_On_the_Limits_of_Pseudo_Ground_Truth_in_Visual_Camera_ICCV_2021_paper.html),
+As mentioned in our paper, we experimented _Pseudo Ground Truth (PGT)_ camera poses obtained after running SfM on the scenes (see the [ICCV 2021 paper](https://openaccess.thecvf.com/content/ICCV2021/html/Brachmann_On_the_Limits_of_Pseudo_Ground_Truth_in_Visual_Camera_ICCV_2021_paper.html),
 and [associated code](https://github.com/tsattler/visloc_pseudo_gt_limitations/) for details).
 
 To download and prepare the datasets using the PGT poses:
@@ -50,7 +50,7 @@ cd datasets
 
 ### Cambridge Landmarks
 
-We used a single variant of this datasets. Simply run:
+Simply run:
 
 ```shell
 cd datasets
