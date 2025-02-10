@@ -47,6 +47,7 @@ cd datasets
 # Downloads the data to datasets/pgt_12scenes_{apt1_kitchen, ...}
 ./setup_12scenes.py --poses pgt
 ``` 
+You can follow [ACE](https://github.com/nianticlabs/ace) to download DSLAM poses and try.
 
 ### Cambridge Landmarks
 
