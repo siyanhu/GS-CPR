@@ -27,20 +27,7 @@ This paper uses three public datasets:
 - [Microsoft 7-Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)
 - [Cambridge Landmarks](https://www.repository.cam.ac.uk/handle/1810/251342/)
 - [Stanford 12-Scenes](https://graphics.stanford.edu/projects/reloc/)
-Following [ACE](https://github.com/nianticlabs/ace), we use scripts in the `datasets` folder to automatically download and extract the data in a format that can be readily used by the ACE scripts.
-
-## Datasets
-
-The ACE method has been evaluated using multiple published datasets:
-
-- [Microsoft 7-Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)
-- [Stanford 12-Scenes](https://graphics.stanford.edu/projects/reloc/)
-- [Cambridge Landmarks](https://www.repository.cam.ac.uk/handle/1810/251342/)
-- [Niantic Wayspots](https://nianticlabs.github.io/ace#dataset)
-
-We provide scripts in the `datasets` folder to automatically download and extract the data in a format that can be
-readily used by the ACE scripts.
-The format is the same used by the DSAC* codebase, see [here](https://github.com/vislearn/dsacstar#data-structure) for
+Following [ACE](https://github.com/nianticlabs/ace), we use scripts in the `datasets` folder to automatically download and extract the data in a format that can be readily used by the ACE scripts. The format is the same used by the DSAC* codebase, see [here](https://github.com/vislearn/dsacstar#data-structure) for
 details.
 
 > **Important: make sure you have checked the license terms of each dataset before using it.**
