@@ -1,4 +1,4 @@
-# GS-CPR
+# GS-CPR: Efficient Camera Pose Refinement via 3D Gaussian Splatting
 **[Changkun Liu](https://lck666666.github.io/),
 [Shuai Chen](https://scholar.google.com/citations?user=c0xTh_YAAAAJ&hl=en), 
 [Yash Bhalgat](https://scholar.google.com/citations?user=q0VSEHYAAAAJ&hl=en),
