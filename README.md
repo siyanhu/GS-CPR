@@ -34,6 +34,25 @@ conda env create --file environment.yml
 conda activate scaffold_gs
 ```
 
+## Datasets (pretrained 3DGS models and ACT weights)
+You can download the prepared DFNet/ACE/Marepo/GLACE prediction poses [link]() and unzip them in the folder `GS-CPR/coarse_poses/`.
+```
+coarse_poses
+├── ace
+├── dfnet
+├── glace
+├── marepo
+```
+You can download the pretrained 3DGS models [link]() and unzip them in the folder `GS-CPR/ACT_Scaffold_GS/data/`. 
+```
+ACT_Scaffold_GS
+├── data
+│   ├── cambridge
+│   ├── 7scenes
+│   ├── 12scenes
+```
+And then run the below command to render the synthetic images based on the `coarse_poses`.
+
 ### GS-CPR refinement environment
 Create the environment as same as [MASt3R](https://github.com/naver/mast3r#demo)
 
@@ -74,24 +93,6 @@ cd datasets
 ./setup_cambridge.py
 ```
 
-## Datasets (pretrained 3DGS models and ACT weights)
-You can download the prepared DFNet/ACE/Marepo/GLACE prediction poses [link]() and unzip them in the folder `GS-CPR/coarse_poses/`.
-```
-coarse_poses
-├── ace
-├── dfnet
-├── glace
-├── marepo
-```
-You can download the pretrained 3DGS models [link]() and unzip them in the folder `GS-CPR/ACT_Scaffold_GS/data/`. 
-```
-ACT_Scaffold_GS
-├── data
-│   ├── cambridge
-│   ├── 7scenes
-│   ├── 12scenes
-```
-And then run the below command to render the synthetic images based on the `coarse_poses`.
 
 
 ## Acknowledgements
