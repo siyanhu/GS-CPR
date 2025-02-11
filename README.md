@@ -32,6 +32,11 @@ We tested our code based on CUDA 12.1, PyTorch 2.4.1, and Python 3.11+
 cd ACT_Scaffold_GS
 conda env create --file environment.yml
 conda activate scaffold_gs
+pip install submodules/diff-gaussian-rasterization
+pip install submodules/simple-knn
+git clone git@github.com:leo-frank/diff-gaussian-rasterization-depth.git
+cd diff-gaussian-rasterization-depth
+python setup.py install
 ```
 
 ## Datasets (pretrained 3DGS models and ACT weights)
