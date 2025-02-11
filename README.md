@@ -103,7 +103,7 @@ cd datasets
 ./setup_cambridge.py
 ```
 
-### GS-CPR refinement
+## GS-CPR refinement
 ```
 #For 7Scenes
 python gs_cpr_7s.py --pose_estimator ace --scene chess
