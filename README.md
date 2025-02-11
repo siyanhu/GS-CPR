@@ -61,8 +61,13 @@ bash script_render_pred_12s.sh
 bash script_render_pred_cam.sh
 ```
 
-### GS-CPR refinement environment
+
+## GS-CPR refinement environment
 Create the environment as same as [MASt3R](https://github.com/naver/mast3r#demo)
+```
+cd GS-CPR
+conda activate mast3r
+```
 
 ## Datasets (raw images + poses)
 This paper uses three public datasets:
@@ -101,6 +106,7 @@ cd datasets
 ./setup_cambridge.py
 ```
 
+### 
 
 
 ## Acknowledgements
