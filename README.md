@@ -52,6 +52,14 @@ ACT_Scaffold_GS
 │   ├── 12scenes
 ```
 And then run the below command to render the synthetic images based on the `coarse_poses`.
+```
+# generate rendered images based on coarse poses for 7Scenes
+bash script_render_pred_7s.sh
+# generate rendered images based on coarse poses for 7Scenes
+bash script_render_pred_12s.sh
+# generate rendered images based on coarse poses for Cambridge Landmarks
+bash script_render_pred_cam.sh
+```
 
 ### GS-CPR refinement environment
 Create the environment as same as [MASt3R](https://github.com/naver/mast3r#demo)
