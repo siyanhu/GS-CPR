@@ -26,6 +26,14 @@ will try to finish by March!
 ### ACT Scaffold-GS environment
 We tested our code based on CUDA 12.1, PyTorch 2.4.1, and Python 3.11+
 
+###Install dependencies
+
+```
+cd ACT_Scaffold_GS
+conda env create --file environment.yml
+conda activate scaffold_gs
+```
+
 ### GS-CPR refinement environment
 Create the environment as same as [MASt3R](https://github.com/naver/mast3r#demo)
 
