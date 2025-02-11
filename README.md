@@ -106,7 +106,15 @@ cd datasets
 ./setup_cambridge.py
 ```
 
-### 
+### GS-CPR refinement
+```
+#For 7Scenes
+python gs_cpr_7s.py --pose_estimator ace --scene chess
+#For 12Scenes
+python gs_cpr_12s.py --pose_estimator ace --scene apt1_kitchen
+#For Cambridge Landmarks
+python gs_cpr_cam.py --pose_estimator ace --scene ShopFacade
+```
 
 
 ## Acknowledgements
