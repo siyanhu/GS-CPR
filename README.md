@@ -79,7 +79,7 @@ Following [ACE](https://github.com/nianticlabs/ace), we utilize the same scripts
 
 > **Important: make sure you have checked the license terms of each dataset before using it.**
 
-### {7, 12}-Scenes:
+#### {7, 12}-Scenes:
 
 You can use the `datasets/setup_{7,12}scenes.py` scripts to download the data.
 As mentioned in our paper, we experimented _Pseudo Ground Truth (PGT)_ camera poses obtained after running SfM on the scenes (see the [ICCV 2021 paper](https://openaccess.thecvf.com/content/ICCV2021/html/Brachmann_On_the_Limits_of_Pseudo_Ground_Truth_in_Visual_Camera_ICCV_2021_paper.html),
@@ -96,7 +96,7 @@ cd datasets
 ``` 
 You can follow [ACE](https://github.com/nianticlabs/ace) to download DSLAM poses and try.
 
-### Cambridge Landmarks
+#### Cambridge Landmarks
 
 Simply run:
 
@@ -110,8 +110,10 @@ cd datasets
 ```
 #For 7Scenes
 python gs_cpr_7s.py --pose_estimator ace --scene chess
+
 #For 12Scenes
 python gs_cpr_12s.py --pose_estimator ace --scene apt1_kitchen
+
 #For Cambridge Landmarks
 python gs_cpr_cam.py --pose_estimator ace --scene ShopFacade
 ```
