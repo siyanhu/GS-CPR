@@ -40,14 +40,6 @@ python setup.py install
 ```
 
 ## Datasets (pretrained 3DGS models and ACT weights)
-You can download the prepared DFNet/ACE/Marepo/GLACE prediction poses [link]() and unzip them in the folder `GS-CPR/coarse_poses/`.
-```
-coarse_poses
-├── ace
-├── dfnet
-├── glace
-├── marepo
-```
 You can download the pretrained 3DGS models [link]() and unzip them in the folder `GS-CPR/ACT_Scaffold_GS/data/`. 
 ```
 ACT_Scaffold_GS
