@@ -62,7 +62,7 @@ if __name__ == '__main__':
         rendered_path = f'./ACT_Scaffold_GS/data/cambridge/scene_{SCENE}/test/evaluate_{pe}/train_output/render_single_view/'
 
         predict_pose_w2c_path = f'./coarse_poses/{pe}/Cambridge/poses_Cambridge_{SCENE}_.txt'
-        gt_pose_c2w_path = f'../ace/datasets/Cambridge_{SCENE}/test/poses/'
+        gt_pose_c2w_path = f'./datasets/Cambridge_{SCENE}/test/poses/'
         gs_depth_path = rendered_path
 
         gt_pose_c2w_dict = {}
