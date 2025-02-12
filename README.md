@@ -16,7 +16,7 @@ and [Tristan BRAUD](https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=en
 [![GS-CPR_rel](imgs/Method_rel.jpg)](https://arxiv.org/abs/2408.11085)
 
 ## To Do:
-- [ ] Finish environment setting
+- [x] Finish environment setting
 - [ ] Upload all pre-trained models
 - [ ] Upload all scripts
 
@@ -46,14 +46,19 @@ python setup.py install
 ```
 
 ## Datasets (pretrained 3DGS models and ACT weights)
-You can download the pretrained 3DGS models [link]() and unzip them in the folder `GS-CPR/ACT_Scaffold_GS/data/`. 
+You can download the pretrained 3DGS models from the provided [link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/cliudg_connect_ust_hk/ElfOnz0vRm9Ot6j47CDzFaoBJrGKoqKGLfb6xYSuMwf7WQ?e=Rrc98i) and unzip them in the folder `GS-CPR/ACT_Scaffold_GS/data/`. You can download pretrained ACT MLP models from the provided [link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/cliudg_connect_ust_hk/ElfOnz0vRm9Ot6j47CDzFaoBJrGKoqKGLfb6xYSuMwf7WQ?e=Rrc98i) and put them in the folder `GS-CPR/ACT_Scaffold_GS/logs/`.
 ```
 ACT_Scaffold_GS
 ├── data
 │   ├── cambridge
 │   ├── 7scenes
 │   ├── 12scenes
+├── logs
+|   ├──paper_models
 ```
+
+For 7scenes COLMAP files, we improves the accuracy of the [sparse point cloud](https://github.com/tsattler/visloc_pseudo_gt_limitations) using dense depth maps in [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/7Scenes) tool box courtesy of Eric Brachmann for [DSAC*](https://github.com/vislearn/dsacstar). For 12scenes COLMAP files, we directly use SfM models provided by [link](https://github.com/tsattler/visloc_pseudo_gt_limitations). For Cambridge Landmarks, we use SfM models from [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/Cambridge) toolbox, courtesy of Torsten Sattler.
+
 And then run the below command to render the synthetic images based on the `coarse_poses`.
 ```
 # generate rendered images based on coarse poses for 7Scenes
@@ -112,15 +117,31 @@ cd datasets
 ## GS-CPR refinement
 ```
 #For 7Scenes
-python gs_cpr_7s.py --pose_estimator ace --scene chess
+python gs_cpr_7s.py --pose_estimator ace --scene chess #for a specific scene
+python gs_cpr_7s.py --pose_estimator ace --test_all #for the whole dataset
 
 #For 12Scenes
 python gs_cpr_12s.py --pose_estimator ace --scene apt1_kitchen
+python gs_cpr_12s.py --pose_estimator ace --test_all #for the whole dataset
 
 #For Cambridge Landmarks
 python gs_cpr_cam.py --pose_estimator ace --scene ShopFacade
+python gs_cpr_cam.py --pose_estimator ace --test_all #for the whole dataset
 ```
+You can check the refined poses for each query in `txt` files and the statistic `log` results in `GS-CPR/outputs`.
+## Citation
+If you find our work helpful, please consider citing:
 
+```bibtex
+@inproceedings{
+liu2025gscpr,
+title={{GS}-{CPR}: Efficient Camera Pose Refinement via 3D Gaussian Splatting},
+author={Changkun Liu and Shuai Chen and Yash Sanjay Bhalgat and Siyan HU and Ming Cheng and Zirui Wang and Victor Adrian Prisacariu and Tristan Braud},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=mP7uV59iJM}
+}
+```
 
 ## Acknowledgements
 This project is developed based on several fantastic repos: [Scaffold-GS](https://github.com/city-super/Scaffold-GS), [MASt3R](https://github.com/naver/mast3r), [NeFeS](https://github.com/ActiveVisionLab/NeFeS), [ACE](https://github.com/nianticlabs/ace) and [Depth for 3DGS](https://github.com/leo-frank/diff-gaussian-rasterization-depth). We thank the original authors for their excellent work.

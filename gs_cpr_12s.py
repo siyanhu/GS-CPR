@@ -24,8 +24,8 @@ if __name__ == '__main__':
     schedule = 'cosine'
     lr = 0.01
     parser = ArgumentParser(description="GS-CPR for pose estimators")
-    parser.add_argument("--pose_estimator", default=f"ace",choices=["ace","marepo","glace"], type=str)
-    parser.add_argument("--scene", default=f"apt1_kitchen", type=str)
+    parser.add_argument("--pose_estimator", default="ace",choices=["ace","marepo","glace"], type=str)
+    parser.add_argument("--scene", default="apt1_kitchen", type=str)
     parser.add_argument("--test_all", action='store_true', default=False)
     args = parser.parse_args()
     original_size = (968, 1296)
@@ -82,9 +82,9 @@ if __name__ == '__main__':
         
         results_ini = []
         results_final = []
-        bad_refine = 0
+        
 
-        refine_results_path = log_path +  f"refine_predictions/" 
+        refine_results_path = log_path +  "refine_predictions/" 
         if not os.path.exists(refine_results_path):
             os.makedirs(refine_results_path)
             print(f"Directory {refine_results_path} created.")

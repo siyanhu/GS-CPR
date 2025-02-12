@@ -23,10 +23,11 @@ if __name__ == '__main__':
     schedule = 'cosine'
     lr = 0.01
     parser = ArgumentParser(description="GS-CPR for pose estimators")
-    parser.add_argument("--pose_estimator", default=f"ace",choices=["ace","glace","dfnet"], type=str)
-    parser.add_argument("--scene", default=f"ShopFacade", choices=["KingsCollege", "ShopFacade", "OldHospital", "StMarysChurch"], type=str)
+    parser.add_argument("--pose_estimator", default="ace",choices=["ace","glace","dfnet"], type=str)
+    parser.add_argument("--scene", default="ShopFacade", choices=["KingsCollege", "ShopFacade", "OldHospital", "StMarysChurch"], type=str)
     parser.add_argument("--test_all", action='store_true', default=False)
     args = parser.parse_args()
+    #original_size = (480, 854)
     original_size = (1080, 1920)
     pe = args.pose_estimator
     if args.test_all:
@@ -89,9 +90,9 @@ if __name__ == '__main__':
         
         results_ini = []
         results_final = []
-        bad_refine = 0
+        
 
-        refine_results_path = log_path +  f"refine_predictions/" 
+        refine_results_path = log_path +  "refine_predictions/" 
         if not os.path.exists(refine_results_path):
             os.makedirs(refine_results_path)
             print(f"Directory {refine_results_path} created.")
@@ -180,7 +181,7 @@ if __name__ == '__main__':
                 
                 
                 if matches_im1.shape[0] >= 4:
-                    success, rvec, tvec, inliers = cv2.solvePnPRansac(points_3D_at_pixels.astype(np.float32), matches_im1.astype(np.float32), K, dist_eff,rvec=initial_rvec,tvec=initial_tvec, useExtrinsicGuess=True, reprojectionError=2.5,iterationsCount=2000,flags=cv2.SOLVEPNP_EPNP)
+                    success, rvec, tvec, inliers = cv2.solvePnPRansac(points_3D_at_pixels.astype(np.float32), matches_im1.astype(np.float32), K, dist_eff,rvec=initial_rvec,tvec=initial_tvec, useExtrinsicGuess=True, reprojectionError = 2.5,iterationsCount=2000,flags=cv2.SOLVEPNP_EPNP)
                     R = perform_rodrigues_transformation(rvec)
                     trans = -R.T @ np.matrix(tvec)
                     predict_c2w_refine = np.eye(4)

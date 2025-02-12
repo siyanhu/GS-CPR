@@ -22,8 +22,8 @@ if __name__ == '__main__':
     schedule = 'cosine'
     lr = 0.01
     parser = ArgumentParser(description="GS-CPR for pose estimators")
-    parser.add_argument("--pose_estimator", default=f"ace",choices=["ace","marepo","glace","dfnet"], type=str)
-    parser.add_argument("--scene", default=f"chess", type=str)
+    parser.add_argument("--pose_estimator", default="ace",choices=["ace","marepo","glace","dfnet"], type=str)
+    parser.add_argument("--scene", default="chess", type=str)
     parser.add_argument("--test_all", action='store_true', default=False)
     args = parser.parse_args()
     original_size = (480, 640)
@@ -83,9 +83,9 @@ if __name__ == '__main__':
         
         results_ini = []
         results_final = []
-        bad_refine = 0
+        
 
-        refine_results_path = log_path +  f"refine_predictions/" 
+        refine_results_path = log_path +  "refine_predictions/" 
         if not os.path.exists(refine_results_path):
             os.makedirs(refine_results_path)
             print(f"Directory {refine_results_path} created.")
@@ -134,7 +134,6 @@ if __name__ == '__main__':
                 for pixel in matches_im0:
                     pixel[0] *= scale_x
                     pixel[1] *= scale_y
-                print(matches_im1.shape)
                 try:
                     depth_map = np.load(gs_depth_path+image.replace('png','npy').replace('-frame','/frame'))
                 except:
@@ -173,8 +172,6 @@ if __name__ == '__main__':
                 for i, (x, y) in enumerate(matches_im0):
                     points_3D_at_pixels[i] = scene_coordinates_gs[:, y, x]
 
-                
-                
                 if matches_im1.shape[0] >= 4:
                     success, rvec, tvec, inliers = cv2.solvePnPRansac(points_3D_at_pixels.astype(np.float32), matches_im1.astype(np.float32), K, dist_eff,rvec=initial_rvec,tvec=initial_tvec, useExtrinsicGuess=True, reprojectionError=1.0,iterationsCount=2000,flags=cv2.SOLVEPNP_EPNP)
                     R = perform_rodrigues_transformation(rvec)
