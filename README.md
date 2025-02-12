@@ -26,7 +26,7 @@ will try to finish by March!
 ### ACT Scaffold-GS environment
 We tested our code based on CUDA 12.1, PyTorch 2.4.1, and Python 3.11+
 
-###Install dependencies
+### Install dependencies
 
 ```
 cd ACT_Scaffold_GS
