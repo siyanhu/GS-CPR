@@ -65,7 +65,7 @@ And then run the below command to render the synthetic images based on the `coar
 ```
 # generate rendered images based on coarse poses for 7Scenes
 bash script_render_pred_7s.sh
-# generate rendered images based on coarse poses for 7Scenes
+# generate rendered images based on coarse poses for 12Scenes
 bash script_render_pred_12s.sh
 # generate rendered images based on coarse poses for Cambridge Landmarks
 bash script_render_pred_cam.sh
