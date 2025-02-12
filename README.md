@@ -26,7 +26,7 @@ will try to finish by March!
 ### ACT Scaffold-GS environment
 We tested our code based on CUDA 12.1, PyTorch 2.4.1, and Python 3.11+
 
-### Install dependencies
+### Install dependencies for ACT Scaffold-GS rendering
 
 ```
 cd ACT_Scaffold_GS
@@ -65,7 +65,7 @@ bash script_render_pred_cam.sh
 ```
 
 
-## GS-CPR refinement environment
+## Install dependencies for GS-CPR refinement
 Create the environment as same as [MASt3R](https://github.com/naver/mast3r#demo)
 ```
 cd GS-CPR
