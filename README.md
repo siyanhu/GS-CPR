@@ -33,6 +33,7 @@ cd ACT_Scaffold_GS
 conda create -n scaffold_act python=3.11
 conda activate scaffold_act
 conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia 
+pip install -r requirements.txt
 
 # install Tiny-cuda-nn
 pip install ninja
