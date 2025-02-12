@@ -17,8 +17,10 @@ and [Tristan BRAUD](https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=en
 
 ## To Do:
 - [x] Finish environment setting
-- [ ] Upload all pre-trained models
-- [ ] Upload all scripts
+- [x] Upload all scripts
+- [x] Upload pre-trained models (Cambridge Landmarks)
+- [] Upload pre-trained models (7scenes)
+- [] Upload pre-trained models (12scenes)
 
 will try to finish by March!
 
