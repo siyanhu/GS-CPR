@@ -42,7 +42,7 @@ done
 # Timestamp for output directories
 time=$(date "+%Y-%m-%d_%H:%M:%S")
 
-scenes=("ShopFacade")
+scenes=('KingsCollege' 'ShopFacade' 'OldHospital' 'StMarysChurch')
 # Main loop for training each scene
 for render_scene in "${scenes[@]}"; do
     # Set the scene path
