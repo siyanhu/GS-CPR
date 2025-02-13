@@ -19,7 +19,7 @@ and [Tristan BRAUD](https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=en
 - [x] Finish environment setting
 - [x] Upload all scripts
 - [x] Upload pre-trained models (Cambridge Landmarks)
-- [ ] Upload pre-trained models (7scenes)
+- [x] Upload pre-trained models (7scenes)
 - [ ] Upload pre-trained models (12scenes)
 
 will try to finish by March!
@@ -27,7 +27,12 @@ will try to finish by March!
 ## Installation
 ### ACT Scaffold-GS environment
 We tested our code based on CUDA 12.1, PyTorch 2.5.1, and Python 3.11+
+Clone this repo:
 
+```
+git clone https://github.com/XRIM-Lab/GS-CPR.git
+cd GS-CPR
+```
 ### Install dependencies for ACT Scaffold-GS rendering
 
 ```
@@ -116,7 +121,7 @@ cd datasets
 ./setup_cambridge.py
 ```
 
-## GS-CPR refinement
+## GS-CPR Refinement Evaluation
 ```
 #For 7Scenes
 python gs_cpr_7s.py --pose_estimator ace --scene chess #for a specific scene
@@ -130,6 +135,18 @@ python gs_cpr_12s.py --pose_estimator ace --test_all #for the whole dataset
 python gs_cpr_cam.py --pose_estimator ace --scene ShopFacade
 python gs_cpr_cam.py --pose_estimator ace --test_all #for the whole dataset
 ```
+
+## GS-CPR_rel Refinement Evaluation
+```
+#For 7Scenes
+python gs_cpr_7s_rel.py --pose_estimator dfnet --scene chess #for a specific scene
+python gs_cpr_7s_rel.py --pose_estimator dfnet --test_all #for the whole dataset
+
+#For Cambridge Landmarks
+python gs_cpr_cam_rel.py --pose_estimator dfnet --scene ShopFacade
+python gs_cpr_cam_rel.py --pose_estimator dfnet --test_all #for the whole dataset
+```
+
 You can check the refined poses for each query in `txt` files and the statistic `log` results in `GS-CPR/outputs`.
 ## Citation
 If you find our work helpful, please consider citing:
