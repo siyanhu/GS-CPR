@@ -127,7 +127,8 @@ def render_sets_virtual2(dataset : ModelParams, iteration : int, pipeline : Pipe
         height = camera_intrin_params[1]
         focal_length_x = camera_intrin_params[2]
         render_scene = args.render_scene
-        with open(args.render_images + f'poses_pgt_12scenes_{render_scene}_.txt', 'r') as file:
+        render_pose_path = f"../coarse_poses/{args.pose_estimator}/12Scenes_pgt/poses_pgt_12scenes_{render_scene}_.txt"
+        with open(render_pose_path, 'r') as file:
             lines = file.readlines()
         views = []
         for line in lines:

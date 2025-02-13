@@ -80,7 +80,7 @@ def getNerfppNorm(cam_info):
 def readColmapCameras(cam_extrinsics, cam_intrinsics, images_folder):
     cam_infos = []
     for idx, key in enumerate(cam_extrinsics):
-        if len(cam_infos) <= 1:
+        if len(cam_infos) <= 1:                #comment when training new 3DGS models
             sys.stdout.write('\r')
             # the exact output you're looking for:
             sys.stdout.write("Reading camera {}/{}".format(idx+1, len(cam_extrinsics)))
@@ -108,19 +108,12 @@ def readColmapCameras(cam_extrinsics, cam_intrinsics, images_folder):
             else:
                 assert False, "Colmap camera model not handled: only undistorted datasets (PINHOLE or SIMPLE_PINHOLE cameras) supported!"
             
-            # print(f'FovX: {FovX}, FovY: {FovY}')
             image_path = os.path.join(images_folder, extr.name)
             if fio.file_exist(image_path) == False:
-                # print("File not exist, ", image_path)
                 continue
-            #print("image_path: ",image_path)
-            # image_path = os.path.join(images_folder, os.path.basename(extr.name))
-            #image_name = os.path.basename(image_path).split(".")[0]
             parts = image_path.split('/')
             image_name = '/'.join(parts[-2:])
             image = Image.open(image_path)
-
-            # print(f'image: {image.size}')
 
             cam_info = CameraInfo(uid=uid, R=R, T=T, FovY=FovY, FovX=FovX, image=image,
                                 image_path=image_path, image_name=image_name, width=width, height=height)
@@ -231,7 +224,7 @@ def readColmapSceneInfo(path, images, eval, lod, llffhold=8):
     reading_dir = "images" if images == None else images
     cam_infos_unsorted = readColmapCameras(cam_extrinsics=cam_extrinsics, cam_intrinsics=cam_intrinsics, images_folder=os.path.join(path, reading_dir))
     cam_infos = sorted(cam_infos_unsorted.copy(), key = lambda x : x.image_name)
-    eval = False
+
     if eval:
         if lod>0:
             print(f'using lod, using eval')
@@ -253,7 +246,7 @@ def readColmapSceneInfo(path, images, eval, lod, llffhold=8):
 
     print("eval-----: ",eval)
     print("lod-----: ",lod)
-    print("test_cam_infos----: ",test_cam_infos)
+    #print("test_cam_infos----: ",test_cam_infos)
     print("len test_cam_infos-----: ",len(test_cam_infos))
     nerf_normalization = getNerfppNorm(train_cam_infos)
 
