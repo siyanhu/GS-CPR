@@ -127,7 +127,7 @@ if __name__ == '__main__':
                 for pixel in matches_im0:
                     pixel[0] *= scale_x
                     pixel[1] *= scale_y
-                print(matches_im1.shape)
+                
                 depth_map = np.load(gs_depth_path+image.replace('jpg','npy').replace('/frame','_frame'))
                 fx, fy, cx, cy = fl, fl, original_size[1]/2, original_size[0]/2  # Example values for focal lengths and principal point
                 K = np.array([
@@ -164,8 +164,7 @@ if __name__ == '__main__':
                 for i, (x, y) in enumerate(matches_im0):
                     points_3D_at_pixels[i] = scene_coordinates_gs[:, y, x]
 
-                
-                
+                            
                 if matches_im1.shape[0] >= 4:
                     success, rvec, tvec, inliers = cv2.solvePnPRansac(points_3D_at_pixels.astype(np.float32), matches_im1.astype(np.float32), K, dist_eff,rvec=initial_rvec,tvec=initial_tvec, useExtrinsicGuess=True, reprojectionError=1.0,iterationsCount=2000,flags=cv2.SOLVEPNP_EPNP)
                     R = perform_rodrigues_transformation(rvec)
