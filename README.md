@@ -60,6 +60,7 @@ ACT_Scaffold_GS
 │   ├── cambridge
 │   ├── 7scenes
 │   ├── 12scenes
+|   ├── Cambridge_semantic
 ├── logs
 |   ├──paper_models
 ```
@@ -76,6 +77,28 @@ bash script_render_pred_12s.sh
 bash script_render_pred_cam.sh
 ```
 
+## Train Scaffold-GS models
+
+comment the line `if len(cam_infos) <= 1:` in `GS-CPR/ACT_Scaffold_GS/scene/dataset_readers.py` when training new models for load camera infos.
+```python
+def readColmapCameras(cam_extrinsics, cam_intrinsics, images_folder):
+    cam_infos = []
+    for idx, key in enumerate(cam_extrinsics):
+        if len(cam_infos) <= 1:                #comment when training new 3DGS models
+            sys.stdout.write('\r')
+            # the exact output you're looking for:
+            sys.stdout.write("Reading camera {}/{}".format(idx+1, len(cam_extrinsics)))
+            sys.stdout.flush()
+```
+
+Run
+```
+#training Scaffold-gs models with ACT modules
+bash train_scaffold_act.sh
+
+#training Scaffold-gs models without ACT modules
+bash train_scaffold.sh
+```
 
 ## Install dependencies for GS-CPR refinement
 Create the environment as same as [MASt3R](https://github.com/naver/mast3r#demo)
