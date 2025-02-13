@@ -12,21 +12,13 @@ and [Tristan BRAUD](https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=en
 
 **[Project Page](https://xrim-lab.github.io/GS-CPR/) | [Paper](https://openreview.net/forum?id=mP7uV59iJM)**
 
-[![GS-CPR](framework_imgs/Method.jpg)](https://arxiv.org/abs/2408.11085)
-[![GS-CPR_rel](framework_imgs/Method_rel.jpg)](https://arxiv.org/abs/2408.11085)
-
-## To Do:
-- [x] Finish environment setting
-- [x] Upload all scripts
-- [x] Upload pre-trained models (Cambridge Landmarks)
-- [x] Upload pre-trained models (7scenes)
-- [ ] Upload pre-trained models (12scenes)
-
-will try to finish by March!
+[![GS-CPR](framework_imgs/Method.jpg)](https://openreview.net/forum?id=mP7uV59iJM)
+[![GS-CPR_rel](framework_imgs/Method_rel.jpg)](https://openreview.net/forum?id=mP7uV59iJM)
 
 ## Installation
 ### ACT Scaffold-GS environment
-We tested our code based on CUDA 12.1, PyTorch 2.5.1, and Python 3.11+
+We tested our code based on CUDA 12.1, PyTorch 2.5.1, and Python 3.11+.
+
 Clone this repo:
 
 ```
@@ -79,7 +71,7 @@ bash script_render_pred_cam.sh
 
 ## Train Scaffold-GS models
 
-comment the line `if len(cam_infos) <= 1:` in `GS-CPR/ACT_Scaffold_GS/scene/dataset_readers.py` when training new models for load camera infos.
+If you want to train new Scaffold-GS models, you need COLMAP format `sparse/` file (please refer to the examples and data structure in the pretrained models). Additionally, when training new models, remember to comment out the line `if len(cam_infos) <= 1:` in `GS-CPR/ACT_Scaffold_GS/scene/dataset_readers.py` to ensure proper loading of camera infos.
 ```python
 def readColmapCameras(cam_extrinsics, cam_intrinsics, images_folder):
     cam_infos = []
