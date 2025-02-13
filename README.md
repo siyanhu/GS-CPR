@@ -76,7 +76,7 @@ If you want to train new Scaffold-GS models, you need COLMAP format `sparse/` fi
 def readColmapCameras(cam_extrinsics, cam_intrinsics, images_folder):
     cam_infos = []
     for idx, key in enumerate(cam_extrinsics):
-        if len(cam_infos) <= 1:                #comment when training new 3DGS models
+        #if len(cam_infos) <= 1:                #comment when training new 3DGS models
             sys.stdout.write('\r')
             # the exact output you're looking for:
             sys.stdout.write("Reading camera {}/{}".format(idx+1, len(cam_extrinsics)))
