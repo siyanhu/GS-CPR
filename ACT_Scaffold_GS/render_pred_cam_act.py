@@ -147,11 +147,10 @@ def render_sets_virtual2(dataset : ModelParams, iteration : int, pipeline : Pipe
         scene = SceneAnchor(dataset, gaussians, load_iteration=iteration, shuffle=False)
         
         camera_intrin_params =  [1920, 1080, 1673, 960, 540]
-        #camera_intrin_params =  [854, 480, 836, 427, 240], resized images in ace/datasets
         camera_model = 'SIMPLE_PINHOLE'
         width = camera_intrin_params[0]
         height = camera_intrin_params[1]
-        focal_length_path = f'../../ace/datasets/Cambridge_{args.render_scene}/test/calibration/'
+        focal_length_path = f'../datasets/Cambridge_{args.render_scene}/test/calibration/'
         render_pose_path = f"../coarse_poses/{args.pose_estimator}/Cambridge/poses_Cambridge_{args.render_scene}_.txt"
         with open(render_pose_path, 'r') as file:
             lines = file.readlines()
@@ -205,7 +204,7 @@ if __name__ == "__main__":
     parser.add_argument("--basedir", type=str, default='./logs/', help='where to store ckpts and logs')
     parser.add_argument("--expname", type=str, default='paper_models', help='experiment name')
     parser.add_argument("--act_itr", type=str, default='30000', help='act_models_iteration')
-    parser.add_argument("--ft_path", type=str, default=f'./logs/paper_models/', help='specific weights npy file to reload for coarse network')
+    parser.add_argument("--ft_path", type=str, default='./logs/paper_models/', help='specific weights npy file to reload for coarse network')
     parser.add_argument("--perturb", type=float, default=1.,help='set to 0. for no jitter, 1. for jitter')
     parser.add_argument("--white_bkgd", action='store_true', help='set to render synthetic data on a white bkgd (always use for dvoxels)')
     parser.add_argument("--raw_noise_std", type=float, default=0., help='std dev of noise added to regularize sigma_a output, 1e0 recommended')
