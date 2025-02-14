@@ -44,7 +44,7 @@ cd diff-gaussian-rasterization-depth
 python setup.py install
 ```
 
-## Pretrained 3DGS models and ACT weights
+### Pretrained 3DGS models and ACT weights
 You can download the pretrained 3DGS models from the provided [link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/cliudg_connect_ust_hk/ElfOnz0vRm9Ot6j47CDzFaoBJrGKoqKGLfb6xYSuMwf7WQ?e=Rrc98i) and unzip them in the folder `GS-CPR/ACT_Scaffold_GS/data/`. You can download pretrained ACT MLP models from the provided [link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/cliudg_connect_ust_hk/ElfOnz0vRm9Ot6j47CDzFaoBJrGKoqKGLfb6xYSuMwf7WQ?e=Rrc98i) and put them in the folder `GS-CPR/ACT_Scaffold_GS/logs/`.
 ```
 ACT_Scaffold_GS
