@@ -65,6 +65,10 @@ And then run the below command to render the synthetic images based on the `coar
 bash script_render_pred_7s.sh
 # generate rendered images based on coarse poses for 12Scenes
 bash script_render_pred_12s.sh
+```
+
+For Cambridge Landmarks dataset, we also need calibrated camera intrinsics files for each image before rendering, it will be prepared in [below](#cambridge-landmarks).
+```
 # generate rendered images based on coarse poses for Cambridge Landmarks
 bash script_render_pred_cam.sh
 ```
@@ -99,7 +103,7 @@ cd GS-CPR
 conda activate mast3r
 ```
 
-## Datasets (raw images + poses)
+## Datasets (raw images + poses + intrinsics)
 This paper uses three public datasets:
 - [Microsoft 7-Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)
 - [Cambridge Landmarks](https://www.repository.cam.ac.uk/handle/1810/251342/)
