@@ -67,7 +67,7 @@ bash script_render_pred_7s.sh
 bash script_render_pred_12s.sh
 ```
 
-For Cambridge Landmarks dataset, we also need calibrated camera intrinsics files for each image before rendering, it will be prepared in [below](#cambridge-landmarks).
+For Cambridge Landmarks dataset, we also need calibrated camera intrinsics files for each image before rendering, it will be prepared in [Datasets](#datasets-raw-images--poses--intrinsics) section.
 ```
 # generate rendered images based on coarse poses for Cambridge Landmarks
 bash script_render_pred_cam.sh
