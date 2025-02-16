@@ -58,7 +58,7 @@ ACT_Scaffold_GS
 ```
 
 
-And then run the below command to render the synthetic images based on the `coarse_poses`.
+And then run the following command to render the synthetic images based on the `coarse_poses`.
 ```
 # generate rendered images based on coarse poses for 7Scenes
 bash script_render_pred_7s.sh
@@ -72,11 +72,11 @@ For Cambridge Landmarks dataset, we also need calibrated camera intrinsics files
 bash script_render_pred_cam.sh
 ```
 
-NOTE: For 7scenes COLMAP files, we improves the accuracy of the [sparse point cloud](https://github.com/tsattler/visloc_pseudo_gt_limitations) using dense depth maps in [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/7Scenes) tool box courtesy of Eric Brachmann for [DSAC*](https://github.com/vislearn/dsacstar). For 12scenes COLMAP files, we directly use SfM models provided by [ICCV 2021](https://github.com/tsattler/visloc_pseudo_gt_limitations). For Cambridge Landmarks, we use SfM models from [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/Cambridge) toolbox, courtesy of Torsten Sattler. **All these COLMAP files and 3DGS pretrained models have been prepared in the above download link.**
+NOTE: For 7scenes COLMAP files, we improve the accuracy of the [sparse point cloud](https://github.com/tsattler/visloc_pseudo_gt_limitations) using dense depth maps in [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/7Scenes) tool box courtesy of Eric Brachmann for [DSAC*](https://github.com/vislearn/dsacstar). For 12scenes COLMAP files, we directly use SfM models provided by [ICCV 2021](https://github.com/tsattler/visloc_pseudo_gt_limitations). For Cambridge Landmarks, we use SfM models from [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/Cambridge) toolbox, courtesy of Torsten Sattler. **All these COLMAP files and 3DGS pretrained models have been prepared in the above download link.**
 
 ## Train Scaffold-GS models
 
-If you want to train new Scaffold-GS models, you need COLMAP format `sparse/` file (please refer to the examples and data structure in the pretrained models). Additionally, when training new models, remember to comment out the line `if len(cam_infos) <= 1:` in `GS-CPR/ACT_Scaffold_GS/scene/dataset_readers.py` to ensure proper loading of camera infos.
+If you want to train new Scaffold-GS models, you need COLMAP format `sparse/` file (please refer to the examples and data structure in the pretrained models). Additionally, when training new models, remember to comment out the line `if len(cam_infos) <= 1:` in `GS-CPR/ACT_Scaffold_GS/scene/dataset_readers.py` to ensure proper loading of camera info.
 ```python
 def readColmapCameras(cam_extrinsics, cam_intrinsics, images_folder):
     cam_infos = []
