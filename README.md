@@ -72,7 +72,7 @@ For Cambridge Landmarks dataset, we also need calibrated camera intrinsics files
 bash script_render_pred_cam.sh
 ```
 
-NOTE: For 7scenes COLMAP files, we improve the accuracy of the [sparse point cloud](https://github.com/tsattler/visloc_pseudo_gt_limitations) using dense depth maps in [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/7Scenes) tool box courtesy of Eric Brachmann for [DSAC*](https://github.com/vislearn/dsacstar). For 12scenes COLMAP files, we directly use SfM models provided by [ICCV 2021](https://github.com/tsattler/visloc_pseudo_gt_limitations). For Cambridge Landmarks, we use SfM models from [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/Cambridge) toolbox, courtesy of Torsten Sattler. **All these COLMAP files and 3DGS pretrained models have been prepared in the above download link.**
+NOTE: For 7scenes COLMAP files, we improve the accuracy of the [sparse point cloud](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/7Scenes) courtesy of Torsten Sattler, using rendered dense depth maps in [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/7Scenes) tool box courtesy of Eric Brachmann for [DSAC*](https://github.com/vislearn/dsacstar). For 12scenes COLMAP files, we directly use SfM models provided by [ICCV 2021](https://github.com/tsattler/visloc_pseudo_gt_limitations). For Cambridge Landmarks, we use SfM models from [HLoc](https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/Cambridge) toolbox, courtesy of Torsten Sattler. **All these COLMAP files and 3DGS pretrained models have been prepared in the above download link.**
 
 ## Train Scaffold-GS models
 
