@@ -37,7 +37,7 @@ if __name__ == '__main__':
     model_name = "naver/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric"
     
     # you can put the path to a local checkpoint in model_name if needed
-    model = AsymmetricMASt3R.from_pretrained(model_name).to(device)
+    model = AsymmetricMASt3R.from_pretrained(model_name).to(device).eval()
     log_path = f"./outputs/cambridge/GS_CPR_rel_{pe}_results/" 
     if not os.path.exists(log_path):
         os.makedirs(log_path)

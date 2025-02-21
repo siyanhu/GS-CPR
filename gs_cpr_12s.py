@@ -39,7 +39,7 @@ if __name__ == '__main__':
     model_name = "naver/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric"
     
     # you can put the path to a local checkpoint in model_name if needed
-    model = AsymmetricMASt3R.from_pretrained(model_name).to(device)
+    model = AsymmetricMASt3R.from_pretrained(model_name).to(device).eval()
     log_path = f"./outputs/12scenes/GS_CPR_{pe}_results/" 
     if not os.path.exists(log_path):
         os.makedirs(log_path)
@@ -119,14 +119,21 @@ if __name__ == '__main__':
 
                 valid_matches = valid_matches_im0 & valid_matches_im1
                 matches_im0, matches_im1 = matches_im0[valid_matches], matches_im1[valid_matches]
-                scale_x = original_size[1] / W0.item()
-                scale_y = original_size[0] / H0.item()
+                scale = original_size[1] / W0.item()
+                
+                #only 12scenes need this step, since the original height/width is not divisible by 16 in dust3r's load image function
+                #resize + crop for 12scenes images
+                #for height/width is divisible by 16, only resize, no crop
                 for pixel in matches_im1:
-                    pixel[0] *= scale_x
-                    pixel[1] *= scale_y
+                    pixel[0] *= scale
+                    inv_crop_shift = int((original_size[0]/scale - H0.item())/2)
+                    pixel[1] += inv_crop_shift
+                    pixel[1] *= scale
                 for pixel in matches_im0:
-                    pixel[0] *= scale_x
-                    pixel[1] *= scale_y
+                    pixel[0] *= scale
+                    inv_crop_shift = int((original_size[0]/scale - H0.item())/2)
+                    pixel[1] += inv_crop_shift
+                    pixel[1] *= scale
                 
                 depth_map = np.load(gs_depth_path+image.replace('jpg','npy').replace('/frame','_frame'))
                 fx, fy, cx, cy = fl, fl, original_size[1]/2, original_size[0]/2  # Example values for focal lengths and principal point
