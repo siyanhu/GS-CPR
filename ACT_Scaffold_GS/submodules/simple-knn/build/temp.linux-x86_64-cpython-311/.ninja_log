@@ -1,0 +1,4 @@
+# ninja log v5
+0	7479	1742042049374876050	/home/siyanhu/Gits/CamPose/GS-CPR/ACT_Scaffold_GS/submodules/simple-knn/build/temp.linux-x86_64-cpython-311/simple_knn.o	cc7502535f7fc344
+0	12214	1742042054109969353	/home/siyanhu/Gits/CamPose/GS-CPR/ACT_Scaffold_GS/submodules/simple-knn/build/temp.linux-x86_64-cpython-311/ext.o	d98fde6c14c1e1db
+1	40441	1742042082329519976	/home/siyanhu/Gits/CamPose/GS-CPR/ACT_Scaffold_GS/submodules/simple-knn/build/temp.linux-x86_64-cpython-311/spatial.o	73ada868edad68a7

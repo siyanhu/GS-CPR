@@ -39,7 +39,7 @@ pip install ninja
 pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 
 # install depth rendering for 3DGS
-git clone git@github.com:leo-frank/diff-gaussian-rasterization-depth.git
+git clone --recursive https://github.com/leo-frank/diff-gaussian-rasterization-depth.git
 cd diff-gaussian-rasterization-depth
 python setup.py install
 ```
